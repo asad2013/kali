@@ -1,0 +1,7 @@
+{
+  "name": "kali",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
