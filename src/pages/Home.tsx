@@ -1,6 +1,6 @@
 import MessageListItem from '../components/MessageListItem';
 import { useState } from 'react';
-import { Message, getMessages } from '../data/messages';
+import { Movie, getMovies } from '../data/movies';
 import {
   IonContent,
   IonHeader,
@@ -16,10 +16,10 @@ import './Home.css';
 
 const Home: React.FC = () => {
 
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [Movie, setMessages] = useState<Movie[]>([]);
 
   useIonViewWillEnter(() => {
-    const msgs = getMessages();
+    const msgs = getMovies();
     setMessages(msgs);
   });
 
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
         </IonHeader>
 
         <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
+          {Movie.map(m => <MessageListItem key={m.id} movie={m} />)}
         </IonList>
       </IonContent>
     </IonPage>

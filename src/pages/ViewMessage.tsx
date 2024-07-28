@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Message, getMessage } from '../data/messages';
+import { Movie, getMessage } from '../data/messages';
 import {
   IonBackButton,
   IonButtons,
@@ -18,7 +18,7 @@ import { useParams } from 'react-router';
 import './ViewMessage.css';
 
 function ViewMessage() {
-  const [message, setMessage] = useState<Message>();
+  const [message, setMessage] = useState<Movie>();
   const params = useParams<{ id: string }>();
 
   useIonViewWillEnter(() => {
@@ -43,7 +43,7 @@ function ViewMessage() {
               <IonIcon aria-hidden="true" icon={personCircle} color="primary"></IonIcon>
               <IonLabel className="ion-text-wrap">
                 <h2>
-                  {message.fromName}
+                  {message.movieName}
                   <span className="date">
                     <IonNote>{message.date}</IonNote>
                   </span>
